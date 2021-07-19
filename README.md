@@ -1,12 +1,12 @@
 # HTTP Ingress
 
 
-|              |                                                             |
-| ------------ | ----------------------------------------------------------- |
-| name         | HTTP Ingress                                                |
-| version      | v0.0.1                                                      |
-| docker image | [weevenetwork/weeve-http-ingress](https://linktodockerhub/) |
-| authors      | Jakub Grzelak                                               |
+|              |                                                                                       |
+| ------------ | ------------------------------------------------------------------------------------- |
+| name         | HTTP Ingress                                                                          |
+| version      | v0.0.1                                                                                |
+| docker image | [weevenetwork/weeve-http-ingress](https://hub.docker.com/r/weevenetwork/http-ingress) |
+| authors      | Jakub Grzelak                                                                         |
 
 ***
 ## Table of Content
