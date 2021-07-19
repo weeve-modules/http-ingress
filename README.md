@@ -6,40 +6,40 @@
 | name         | HTTP Ingress                                                |
 | version      | v0.0.1                                                      |
 | docker image | [weevenetwork/weeve-http-ingress](https://linktodockerhub/) |
-| tags         | Python, Flask, Docker, Weeve                                |
 | authors      | Jakub Grzelak                                               |
 
 ***
 ## Table of Content
 - [HTTP Ingress](#http-ingress)
+  - [Table of Content](#table-of-content)
   - [Description](#description)
-  - [Features](#features)
+    - [Features](#features)
   - [Environment Variables](#environment-variables)
     - [Module Specific](#module-specific)
     - [Set by the weeve Agent on the edge-node](#set-by-the-weeve-agent-on-the-edge-node)
   - [Dependencies](#dependencies)
-
-
-
+  - [Examples](#examples)
+    - [Input](#input)
+    - [Output](#output)
+  - [docker-compose example](#docker-compose-example)
 
 ## Description 
 
 This module takes and processes ingress from HTTP POST requests.
 
 ### Features
-1. Flask ReST client
-2. Receives HTTP POST request
-3. Request - sends HTTP Request to the next module
+1. Creates a HTTP ReST Server
+2. Receives data in POST body
 
 ## Environment Variables
 
 ### Module Specific
 The following module configurations can be provided in a data service designer section on weeve platform:
 
-| Name          | Environment Variables  | type   | Description                                                     |
-| ------------- | ---------------------- | ------ | --------------------------------------------------------------- |
-| Handler Host  | HANDLER_HOST           | string | Handler host address to which HTTP POST request should be sent. |
-| Handler Port  | HANDLER_PORT           | string | Handler port address to which HTTP POST request should be sent. |
+| Name         | Environment Variables | type   | Description                                                     |
+| ------------ | --------------------- | ------ | --------------------------------------------------------------- |
+| Handler Host | HANDLER_HOST          | string | Handler host address to which HTTP POST request should be sent. |
+| Handler Port | HANDLER_PORT          | string | Handler port address to which HTTP POST request should be sent. |
 
 ***
 
@@ -62,5 +62,24 @@ requests
 python-dotenv
 ```
 
-## Output
+## Examples
+
+### Input
+HTTP ReST POST request with request-body
+### Output
 Output of this module is JSON body the same as the JSON body received from HTTP POST request.
+
+## docker-compose example
+
+```yml
+version: "3"
+services:
+  boilerplate:
+    image: weevenetwork/http-ingress
+    environment:
+      MODULE_NAME: http-imgress
+      EGRESS_API_HOST: https://hookb.in/r1YwjDyn7BHzWWJVK8Gq
+    ports:
+      - 5000:80
+
+```

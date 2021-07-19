@@ -1,11 +1,15 @@
 SHELL := /bin/bash
 
 create_image:
-	docker build -t boilerplate .
+	docker build -t weevenetwork/http-ingress .
 .phony: create_image
 
+push_latest:
+	docker image push weevenetwork/http-ingress
+.phony: push_latest
+
 run_image:
-	docker run -p 8000:5000 --rm boilerplate:latest
+	docker run -p 8000:5000 --rm http-ingress:latest
 .phony: run_image
 
 lint:
