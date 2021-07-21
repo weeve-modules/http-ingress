@@ -12,7 +12,7 @@ def main():
     configure_logging()
     log.info("%s Started", WEEVE["MODULE_NAME"])
     app = create_app()
-    app.run(host=APPLICATION['HANDLER_HOST'], port=APPLICATION["HANDLER_PORT"])
+    app.run(host=APPLICATION['HOST_NAME'], port=APPLICATION["HOST_PORT"])
 
 
 if __name__ == "__main__":

@@ -36,10 +36,10 @@ This module takes and processes ingress from HTTP POST requests.
 ### Module Specific
 The following module configurations can be provided in a data service designer section on weeve platform:
 
-| Name         | Environment Variables | type   | Description                                                     |
-| ------------ | --------------------- | ------ | --------------------------------------------------------------- |
-| Handler Host | HANDLER_HOST          | string | Handler host address to which HTTP POST request should be sent. |
-| Handler Port | HANDLER_PORT          | string | Handler port address to which HTTP POST request should be sent. |
+| Name      | Environment Variables | type   | Description                                 |
+| --------- | --------------------- | ------ | ------------------------------------------- |
+| Host Name | HOST_NAME             | string | Host name/address where the server will run |
+| Port      | HOST_PORT             | string | Port on which the server will run           |
 
 ***
 
@@ -79,8 +79,8 @@ services:
     environment:
       MODULE_NAME: http-imgress
       EGRESS_API_HOST: https://hookb.in/r1YwjDyn7BHzWWJVK8Gq
-      HANDLER_PORT: 80
-      HANDLER_HOST: 255.456.789.255
+      HOST_PORT: 80
+      HOST_NAME: 255.456.789.255
     ports:
       - 5000:80
 ```
