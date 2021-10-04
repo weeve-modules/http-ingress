@@ -5,8 +5,6 @@ import time
 from requests import post
 from app.config import APPLICATION, WEEVE
 
-import logging
-
 
 def send_data(data: json, timestamp=time.time()) -> bool:
     """Sends data to the next module

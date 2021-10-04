@@ -2,7 +2,6 @@
 All route entry points
 """
 from flask import Flask, request
-import requests
 
 from app.config import HTTP_CODES
 
