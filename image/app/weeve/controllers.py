@@ -2,6 +2,7 @@
 All route entry points
 """
 from flask import Flask, request
+import requests
 
 from app.config import HTTP_CODES
 
@@ -33,6 +34,6 @@ def main_routes(app: Flask):
 
         sent = send_data(received_data)
         if sent:
-            return "", HTTP_CODES['NO_CONTENT']
+            return "SUCCESS", HTTP_CODES['OK']
         app.logger.error("Error while transfering")
-        return "Error while transfering", HTTP_CODES['INTERNAL_SERVER_ERROR']
+        return "ERROR while transfering", HTTP_CODES['INTERNAL_SERVER_ERROR']

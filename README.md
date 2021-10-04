@@ -4,7 +4,7 @@
 |              |                                                                                 |
 | ------------ | ------------------------------------------------------------------------------- |
 | name         | HTTP Ingress                                                                    |
-| version      | v0.0.1                                                                          |
+| version      | v0.0.2                                                                          |
 | docker image | [weevenetwork/http-ingress](https://hub.docker.com/r/weevenetwork/http-ingress) |
 | authors      | Jakub Grzelak                                                                   |
 
@@ -49,7 +49,7 @@ Other features required for establishing the inter-container communication betwe
 
 | Environment Variables | type   | Description                            |
 | --------------------- | ------ | -------------------------------------- |
-| EGRESS_API_HOST       | string | HTTP ReST endpoint for the next module |
+| EGRESS_URL            | string | HTTP ReST endpoint for the next module |
 | MODULE_NAME           | string | Name of the module                     |
 
 
@@ -77,8 +77,8 @@ services:
   boilerplate:
     image: weevenetwork/http-ingress
     environment:
-      MODULE_NAME: http-imgress
-      EGRESS_API_HOST: https://hookb.in/r1YwjDyn7BHzWWJVK8Gq
+      MODULE_NAME: http-ingress
+      EGRESS_URL: https://hookb.in/r1YwjDyn7BHzWWJVK8Gq
       HOST_PORT: 80
       HOST_NAME: 255.456.789.255
     ports:
