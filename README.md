@@ -49,9 +49,13 @@ Other features required for establishing the inter-container communication betwe
 
 | Environment Variables | type   | Description                            |
 | --------------------- | ------ | -------------------------------------- |
-| EGRESS_URL            | string | HTTP ReST endpoint for the next module |
 | MODULE_NAME           | string | Name of the module                     |
-
+| MODULE_TYPE           | string | Type of the module (ingress, processing, egress)                     |
+| EGRESS_SCHEME         | string | URL Scheme    |
+| EGRESS_HOST           | string | URL target host |
+| EGRESS_PORT           | string | URL target port |
+| EGRESS_PATH           | string | URL target path |
+| EGRESS_URL            | string | HTTP ReST endpoint for the next module |
 
 
 ## Dependencies
@@ -68,6 +72,8 @@ python-dotenv
 HTTP ReST POST request with request-body
 ### Output
 Output of this module is JSON body the same as the JSON body received from HTTP POST request.
+
+Modules return a 200 response for success, and 500 for error. No other return message is supported.
 
 ## docker-compose example
 
