@@ -2,11 +2,11 @@ version: "3"
 services:
   boilerplate:
     build:
-      context: .
+      context: image
       dockerfile: Dockerfile
     environment:
-      MODULE_NAME: http-imgress
-      EGRESS_API_HOST: https://hookb.in/r1YwjDyn7BHzWWJVK8Gq
+      MODULE_NAME: http-ingress
+      EGRESS_URL: https://hookb.in/r1YwjDyn7BHzWWJVK8Gq
       HOST_PORT: 80
       HOST_NAME: 255.456.789.255
     ports:

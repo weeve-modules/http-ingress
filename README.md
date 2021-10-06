@@ -4,7 +4,7 @@
 |              |                                                                                 |
 | ------------ | ------------------------------------------------------------------------------- |
 | name         | HTTP Ingress                                                                    |
-| version      | v0.0.1                                                                          |
+| version      | v0.0.2                                                                          |
 | docker image | [weevenetwork/http-ingress](https://hub.docker.com/r/weevenetwork/http-ingress) |
 | authors      | Jakub Grzelak                                                                   |
 
@@ -49,9 +49,13 @@ Other features required for establishing the inter-container communication betwe
 
 | Environment Variables | type   | Description                            |
 | --------------------- | ------ | -------------------------------------- |
-| EGRESS_API_HOST       | string | HTTP ReST endpoint for the next module |
 | MODULE_NAME           | string | Name of the module                     |
-
+| MODULE_TYPE           | string | Type of the module (ingress, processing, egress)                     |
+| EGRESS_SCHEME         | string | URL Scheme    |
+| EGRESS_HOST           | string | URL target host |
+| EGRESS_PORT           | string | URL target port |
+| EGRESS_PATH           | string | URL target path |
+| EGRESS_URL            | string | HTTP ReST endpoint for the next module |
 
 
 ## Dependencies
@@ -69,6 +73,8 @@ HTTP ReST POST request with request-body
 ### Output
 Output of this module is JSON body the same as the JSON body received from HTTP POST request.
 
+Modules return a 200 response for success, and 500 for error. No other return message is supported.
+
 ## docker-compose example
 
 ```yml
@@ -77,8 +83,8 @@ services:
   boilerplate:
     image: weevenetwork/http-ingress
     environment:
-      MODULE_NAME: http-imgress
-      EGRESS_API_HOST: https://hookb.in/r1YwjDyn7BHzWWJVK8Gq
+      MODULE_NAME: http-ingress
+      EGRESS_URL: https://hookb.in/r1YwjDyn7BHzWWJVK8Gq
       HOST_PORT: 80
       HOST_NAME: 255.456.789.255
     ports:

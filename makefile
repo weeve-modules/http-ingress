@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 
 create_image:
-	docker build -t weevenetwork/http-ingress .
+	docker build -t weevenetwork/http-ingress . -f image/Dockerfile
 .phony: create_image
 
 push_latest:
@@ -9,7 +9,7 @@ push_latest:
 .phony: push_latest
 
 run_image:
-	docker run -p 8000:5000 --rm http-ingress:latest
+	docker run -p 5000:80 --rm --env-file=./config.env weevenetwork/http-ingress:latest
 .phony: run_image
 
 lint:
