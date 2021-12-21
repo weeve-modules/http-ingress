@@ -4,7 +4,7 @@ All constants specific to weeve
 from app.utils.env import env
 
 WEEVE = {
-    "MODULE_NAME": env("MODULE_NAME", "HTTP-Ingress"),
+    "MODULE_NAME": env("MODULE_NAME", "http-ingress"),
     "MODULE_TYPE": env("MODULE_TYPE", "INGRESS"),
     "EGRESS_SCHEME": env("EGRESS_SCHEME", "http"),
     "EGRESS_HOST": env("EGRESS_HOST", "localhost"),
