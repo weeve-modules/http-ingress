@@ -10,5 +10,7 @@ WEEVE = {
     "EGRESS_HOST": env("EGRESS_HOST", "localhost"),
     "EGRESS_PORT": env("EGRESS_PORT", "80"),
     "EGRESS_PATH": env("EGRESS_PATH", ""),
-    "EGRESS_URL": env("EGRESS_URL", "")
+    "EGRESS_URL": env("EGRESS_URL", ""),
+    "INGRESS_HOST": env("INGRESS_HOST", "0.0.0.0"),
+    "INGRESS_PORT": env("INGRESS_PORT", "80")
 }
