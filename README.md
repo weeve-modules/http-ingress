@@ -56,7 +56,8 @@ Other features required for establishing the inter-container communication betwe
 | EGRESS_PORT           | string | URL target port |
 | EGRESS_PATH           | string | URL target path |
 | EGRESS_URL            | string | HTTP ReST endpoint for the next module |
-
+| INGRESS_HOST          | string | Host to which data will be received            |
+| INGRESS_PORT          | string | Port to which data will be received            |
 
 ## Dependencies
 

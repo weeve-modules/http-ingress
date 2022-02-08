@@ -30,7 +30,9 @@ environments:
     name: Port
 commands: []
 document:
-  ports: []
+  ports:
+    HostIP: HOST_NAME
+    HostPort: HOST_PORT
   volumes: []
   restart_policy:
     condition: on-failure
