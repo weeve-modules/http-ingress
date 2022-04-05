@@ -28,6 +28,27 @@ environments:
     default: 80
     type: integer
     name: Port
+  - key: AUTHENTICATION_REQUIRED
+    description: Connection requires authentication via bearer token
+    value: ''
+    default: no
+    type: enum
+    options:
+      - yes
+      - no
+    name: Authentiocation Bearer   
+  - key: AUTHENTICATION_TOKEN
+    description: Authentication token for authorization
+    value: ''
+    default: ''
+    type: string
+    name: Authentication token
+  - key: AUTHENTICATION_API_KEY
+    description: Authentication API key if required
+    value: ''
+    default: ''
+    type: string
+    name: Authentication API key
 commands: []
 document:
   ports:

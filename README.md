@@ -40,6 +40,9 @@ The following module configurations can be provided in a data service designer s
 | --------- | --------------------- | ------ | ------------------------------------------- |
 | Host Name | HOST_NAME             | string | Host name/address where the server will run |
 | Port      | HOST_PORT             | string | Port on which the server will run           |
+| AUTHENTICATION_REQUIRED          | enum | Determines if during request authentication is required           |
+| AUTHENTICATION_TOKEN          | string | If authentication is required this is the input for token, it also requires method like Basic or Bearer for example: Barer adhjaskjhjd-dsfdsfjsdkjf#42389dfsajfd==           |
+| AUTHENTICATION_API_KEY          | string | If we need to specify authentication X-API-TOKEN, here users can enter it|
 
 ***
 
