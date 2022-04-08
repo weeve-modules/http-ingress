@@ -23,7 +23,7 @@ def create_app() -> Flask:
 
 
 def set_routes(app: Flask):
-    """Sets routs for the flask app
+    """Sets routes for the flask app
 
     Args:
         app (Flask): [Flask]
