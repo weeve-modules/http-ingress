@@ -17,7 +17,7 @@ def stat_routes(app: Flask):
 
     """
     @app.route('/health', methods=["GET"])
-    def health():
+    def health():                
         return health_check(), HTTP_CODES['OK']
 
 
@@ -29,12 +29,8 @@ def main_routes(app: Flask):
     """
     @app.route('/', methods=["POST"])
     def handle():
-        if APPLICATION['AUTHENTICATION_REQUIRED']=='yes' and APPLICATION['AUTHENTICATION_TOKEN']!='':
-            request.headers.set({"Authorization": f"{APPLICATION['AUTHENTICATION_TOKEN']}"})
-        if APPLICATION['AUTHENTICATION_API_KEY']!='':
-            request.headers.set({'x-api-key': APPLICATION['AUTHENTICATION_API_KEY']})
         received_data = request.get_json(force=True)
-
+        
         sent = send_data(received_data)
         if sent:
             return "SUCCESS", HTTP_CODES['OK']
