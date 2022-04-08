@@ -11,7 +11,7 @@ log = getLogger(__name__)
 
 
 def create_app() -> Flask:
-    """Configures the flask ap and returns it
+    """Configures the flask app and returns it
 
     Returns:
         Flask: [Flask app]
