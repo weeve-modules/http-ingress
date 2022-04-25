@@ -2,8 +2,9 @@
 """
 import json
 import time
-from requests import post
+
 from app.config import APPLICATION, WEEVE
+from requests import post
 
 
 def send_data(data: json, timestamp=time.time()) -> bool:
@@ -20,16 +21,20 @@ def send_data(data: json, timestamp=time.time()) -> bool:
     try:
         # URL Convetion 1
         if not WEEVE['EGRESS_URL']:
-            resp = post(url=f"{WEEVE['EGRESS_SCHEME']}://{WEEVE['EGRESS_HOST']}:{WEEVE['EGRESS_PORT']}/{WEEVE['EGRESS_PATH']}", json=data)
+            resp = post(
+                url=f"{WEEVE['EGRESS_SCHEME']}://{WEEVE['EGRESS_HOST']}:{WEEVE['EGRESS_PORT']}/{WEEVE['EGRESS_PATH']}",
+                json=data
+            )
         # URL Convetion 2
         else:
             resp = post(url=f"{WEEVE['EGRESS_URL']}", json=data)
-        
+
         # success = 200
         if resp.status_code == 200:
             return True
         # failure = 500
-        else: 
+        else:
             return False
-    except Exception:
+    except Exception as e:
+        print(e)
         return False
