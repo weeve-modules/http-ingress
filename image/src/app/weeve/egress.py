@@ -5,7 +5,9 @@ import time
 
 from app.config import APPLICATION, WEEVE
 from requests import post
+from logging import getLogger
 
+log = getLogger(__name__)
 
 def send_data(data: json, timestamp=time.time()) -> bool:
     """Sends data to the next module
@@ -34,7 +36,9 @@ def send_data(data: json, timestamp=time.time()) -> bool:
             return True
         # failure = 500
         else:
+            log.error(f"{resp.status_code} ->{resp.reason} -> data sent: {json.dumps(data)}")
             return False
     except Exception as e:
+        log.error(e)
         print(e)
         return False
