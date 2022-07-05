@@ -7,10 +7,11 @@ Edit this file to implement your module.
 
 from logging import getLogger
 from api.send_data import send_data
+from bottle import post, request, response
 
 log = getLogger("module")
 
-
+@post("/")
 def module_main():
     """
     Implements module's main logic for inputting data.
@@ -23,9 +24,10 @@ def module_main():
         # YOUR CODE HERE
         # ----------------------------------------------------------------
 
-        # input_data are data received by the module
-        input_data = None
+        # receive data from the previous module
+        input_data = request.json
 
+        log.debug("Received data: %s", input_data)
 
         # ----------------------------------------------------------------
 
@@ -34,8 +36,13 @@ def module_main():
 
         if send_error:
             log.error(send_error)
+            response.status = 400
+            return f"Error: {send_error}"
         else:
-            log.debug("Data sent sucessfully.")
+            log.debug("Data sent successfully.")
+            return "OK - data accepted"
 
     except Exception as e:
         log.error(f"Exception in the module business logic: {e}")
+        response.status = 400
+        return f"Exception occurred in the successive module while handling your POST request. {e}"

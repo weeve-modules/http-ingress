@@ -1,6 +1,6 @@
 SHELL := /bin/bash # to enable source command in run_app
 
-MODULE=weevenetwork/boilerplate
+MODULE=weevenetwork/http-ingress
 
 lint:
 	black src/
@@ -16,7 +16,7 @@ create_image:
 .phony: create_image
 
 run_image:
-	docker run -p 80:80 --rm --env-file=./.env ${MODULE}:latest
+	docker run -p 5000:80 --rm --env-file=./.env ${MODULE}:latest
 .phony: run_image
 
 run_docker_compose:

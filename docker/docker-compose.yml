@@ -1,12 +1,14 @@
 version: "3.0"
 services:
-  boilerplate:
+  http-ingress:
     build:
       context: ../
       dockerfile: docker/Dockerfile
     environment:
-      MODULE_NAME: "boilerplate"
+      MODULE_NAME: "http-ingress"
       MODULE_TYPE: "Input"
       EGRESS_URLS: "https://testdockercompose.free.beeceptor.com"
+      HOST_NAME: 0.0.0.0
+      HOST_PORT: 80
     ports:
       - 80:80

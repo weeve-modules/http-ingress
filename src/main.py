@@ -4,8 +4,9 @@ Entrypoint file that sets up and starts REST API server for the module.
 
 from os import getenv
 from logging import getLogger
+from bottle import run
 from api import setup_logging
-from module.module import module_main
+from module import module_main
 
 setup_logging()
 log = getLogger("main")
@@ -17,7 +18,12 @@ def main():
         getenv("EGRESS_URLS"),
     )
 
-    module_main()
+    # start the server
+    run(
+        host=getenv("HOST_NAME"),
+        port=getenv("HOST_PORT"),
+        quiet=True,
+    )
 
 if __name__ == "__main__":
     main()
