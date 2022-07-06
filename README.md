@@ -44,6 +44,7 @@ Other features required for establishing the inter-container communication betwe
 | MODULE_NAME           | string | Name of the module                             |
 | MODULE_TYPE           | string | Type of the module (INGRESS, PROCESS, EGRESS)  |
 | EGRESS_URLS           | string | HTTP ReST endpoint for the next module         |
+| LOG_LEVEL             | string | Allowed log levels: DEBUG, INFO, WARNING, ERROR, CRITICAL. Refer to `logging` package documentation. |
 
 ## Dependencies
 
