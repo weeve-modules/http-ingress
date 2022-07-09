@@ -4,7 +4,7 @@
 |              |                                                                                 |
 | ------------ | ------------------------------------------------------------------------------- |
 | name         | HTTP Ingress                                                                    |
-| version      | v0.0.2                                                                          |
+| version      | v0.0.1                                                                          |
 | docker image | [weevenetwork/http-ingress](https://hub.docker.com/r/weevenetwork/http-ingress) |
 | authors      | Jakub Grzelak                                                                   |
 
