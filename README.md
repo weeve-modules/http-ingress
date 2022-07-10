@@ -42,7 +42,7 @@ Other features required for establishing the inter-container communication betwe
 | Environment Variables | type   | Description                                    |
 | --------------------- | ------ | ---------------------------------------------- |
 | MODULE_NAME           | string | Name of the module                             |
-| MODULE_TYPE           | string | Type of the module (INGRESS, PROCESS, EGRESS)  |
+| MODULE_TYPE           | string | Type of the module (Input, Processing, Output)  |
 | EGRESS_URLS           | string | HTTP ReST endpoint for the next module         |
 | LOG_LEVEL             | string | Allowed log levels: DEBUG, INFO, WARNING, ERROR, CRITICAL. Refer to `logging` package documentation. |
 
