@@ -22,7 +22,7 @@ envs:                                   # Array of environment variables that wi
   - name: Host Port
     key: HOST_PORT
     description: Port on which the server will run.
-    value: 80
+    value: '80'
     type: 'number'
     options: []
     dependencies: []
