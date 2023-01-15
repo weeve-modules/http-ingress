@@ -23,6 +23,8 @@
 
 This module takes and processes ingress from HTTP POST requests.
 
+Warning: Please instead of using `localhost` as `HOST_NAME` setting just use raw `0.0.0.0` or your other local host address.
+
 ## Environment Variables
 
 ### Module Specific
