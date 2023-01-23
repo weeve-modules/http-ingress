@@ -11,6 +11,7 @@ from module import module_main
 setup_logging()
 log = getLogger("main")
 
+
 def main():
     log.info(
         "%s running with end-point set to %s",
@@ -20,10 +21,11 @@ def main():
 
     # start the server
     run(
-        host=getenv("HOST_NAME"),
+        host="0.0.0.0",
         port=getenv("HOST_PORT"),
         quiet=True,
     )
+
 
 if __name__ == "__main__":
     main()

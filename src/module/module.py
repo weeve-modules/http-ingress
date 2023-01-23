@@ -11,6 +11,7 @@ from bottle import post, request, response
 
 log = getLogger("module")
 
+
 @post("/")
 def module_main():
     """
