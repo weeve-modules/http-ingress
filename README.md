@@ -1,11 +1,11 @@
 # HTTP Ingress
 
-|                |                                       |
-| -------------- | ------------------------------------- |
-| Name           | HTTP Ingress                           |
-| Version        | v1.0.0                                |
-| DockerHub      | [weevenetwork/http-ingress](https://hub.docker.com/r/weevenetwork/http-ingress) |
-| authors        | Jakub Grzelak                    |
+|           |                                                                                 |
+| --------- | ------------------------------------------------------------------------------- |
+| Name      | HTTP Ingress                                                                    |
+| Version   | v1.0.0                                                                          |
+| DockerHub | [weevenetwork/http-ingress](https://hub.docker.com/r/weevenetwork/http-ingress) |
+| authors   | Jakub Grzelak                                                                   |
 
 ## Table of Content
 
@@ -23,7 +23,7 @@
 
 This module takes and processes ingress from HTTP POST requests.
 
-Warning: Please instead of using `localhost` as `HOST_NAME` setting just use raw `0.0.0.0` or your other local host address.
+NOTE: currently only IPv4 is supported.
 
 ## Environment Variables
 
@@ -31,21 +31,20 @@ Warning: Please instead of using `localhost` as `HOST_NAME` setting just use raw
 
 The following module configurations can be provided in a data service designer section on weeve platform:
 
-| Environment Variables | type   | Description                                 |
-| --------------------- | ------ | ------------------------------------------- |
-| HOST_NAME             | string | Host name/address where the server will run |
-| HOST_PORT             | string | Port on which the server will run           |
+| Environment Variables | type   | Description                       |
+| --------------------- | ------ | --------------------------------- |
+| HOST_PORT             | string | Port on which the server will run |
 
 
 ### Set by the weeve Agent on the edge-node
 
 Other features required for establishing the inter-container communication between modules in a data service are set by weeve agent.
 
-| Environment Variables | type   | Description                                    |
-| --------------------- | ------ | ---------------------------------------------- |
-| MODULE_NAME           | string | Name of the module                             |
-| MODULE_TYPE           | string | Type of the module (Input, Processing, Output)  |
-| EGRESS_URLS           | string | HTTP ReST endpoint for the next module         |
+| Environment Variables | type   | Description                                                                                          |
+| --------------------- | ------ | ---------------------------------------------------------------------------------------------------- |
+| MODULE_NAME           | string | Name of the module                                                                                   |
+| MODULE_TYPE           | string | Type of the module (Input, Processing, Output)                                                       |
+| EGRESS_URLS           | string | HTTP ReST endpoint for the next module                                                               |
 | LOG_LEVEL             | string | Allowed log levels: DEBUG, INFO, WARNING, ERROR, CRITICAL. Refer to `logging` package documentation. |
 
 ## Dependencies

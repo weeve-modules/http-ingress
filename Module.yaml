@@ -12,13 +12,6 @@ image:
   homepage: 'https://hub.docker.com/r/weevenetwork/http-ingress'      # Image homepage from the docker registry.
 repository: 'https://github.com/weeve-modules/http-ingress'     # Repository URL to source code.
 envs:                                   # Array of environment variables that will be used to configure the module. Also used to show related fields on the UI.
-  - name: Host Name                   # name of the field to be displayed on the UI.
-    key: HOST_NAME                # key to set in the environment variables.
-    description: Host name/address where the server will run.     # Description/helper text for the field.
-    value: '0.0.0.0'                         # Value to be set in the environment variables.
-    type: 'text'                    # Type of the field. Possible values are: ['text', 'select', 'boolean', 'date', 'time', 'dateTime-local', 'number', 'multiple', 'CSV', 'file']
-    options: []
-    dependencies: []                     # List of dependencies for the field. This field is only displayed if all the dependencies are met. If
   - name: Host Port
     key: HOST_PORT
     description: Port on which the server will run.
