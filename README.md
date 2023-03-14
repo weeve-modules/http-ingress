@@ -3,7 +3,7 @@
 |           |                                                                                 |
 | --------- | ------------------------------------------------------------------------------- |
 | Name      | HTTP Ingress                                                                    |
-| Version   | v1.0.0                                                                          |
+| Version   | v1.0.1                                                                          |
 | DockerHub | [weevenetwork/http-ingress](https://hub.docker.com/r/weevenetwork/http-ingress) |
 | authors   | Jakub Grzelak                                                                   |
 
